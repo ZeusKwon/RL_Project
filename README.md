@@ -1,6 +1,12 @@
 # RL_Project
+https://github.com/satwikkansal/q-learning-taxi-v3#q-learning-taxi-v3
+https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/
+
 ## Q-learning taxi-v3
-Table based q-learning implementation for taxi-v3 environment of Open AI gym.
+- State :
+- action :
+- reward :
+- Table based q-learning implementation for taxi-v3 environment of Open AI gym.
 
 ## Instructions to run
 
