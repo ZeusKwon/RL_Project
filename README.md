@@ -3,8 +3,17 @@ https://github.com/satwikkansal/q-learning-taxi-v3#q-learning-taxi-v3
 https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/
 
 ## Q-learning taxi-v3
-- State :
-- action :
+- State 
+
+: The State Space is the set of all possible situations our taxi could inhabit. The state should contain useful information the agent needs to make the right action.
+R, G, Y, B or [(0,0), (0,4), (4,0), (4,3)] in (row, col) coordinates.
+- action 
+  - South
+  - North
+  - East
+  - West
+  - Pickup
+  - dropoff
 - reward :
 - Table based q-learning implementation for taxi-v3 environment of Open AI gym.
 
