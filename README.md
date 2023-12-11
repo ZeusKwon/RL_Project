@@ -26,8 +26,8 @@ Table based q-learning implementation for taxi-v3 environment of Open AI gym.
 
 ## Instructions to run
 ```shell script
-# gym==0.17.1 , click
 $ pip install -r requirements.txt
+# or pip install gym==0.17.1 click
 ```
 
 ### Training
