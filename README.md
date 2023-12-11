@@ -7,7 +7,7 @@ https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-o
 
 ![Reinforcement_Learning_Taxi_Env width-1200](https://github.com/ZeusKwon/RL_Project/assets/70212461/9b0f8ddc-c95f-40d6-998a-de5af902e3bf)
 
-: The State Space is the set of all possible situations our taxi could inhabit. The state should contain useful information the agent needs to make the right action.
+The State Space is the set of all possible situations our taxi could inhabit. The state should contain useful information the agent needs to make the right action.
 R, G, Y, B or [(0,0), (0,4), (4,0), (4,3)] in (row, col) coordinates.
 - action 
   - South
@@ -15,13 +15,18 @@ R, G, Y, B or [(0,0), (0,4), (4,0), (4,3)] in (row, col) coordinates.
   - East
   - West
   - Pickup
-  - dropoff
-- reward :
-- Table based q-learning implementation for taxi-v3 environment of Open AI gym.
+  - Dropoff
+
+- reward 
+  - successful drop-off : +20
+  - every time-step : -1
+  - illegal pick-up and drop-off : -10
+
+Table based q-learning implementation for taxi-v3 environment of Open AI gym.
 
 ## Instructions to run
-
 ```shell script
+# gym==0.17.1 , click
 $ pip install -r requirements.txt
 ```
 
@@ -38,7 +43,6 @@ Options:
 ```
 
 ### Evaluation
-
 ```shell script
 $ python evaluate.py --help
 Usage: evaluate.py [OPTIONS]
