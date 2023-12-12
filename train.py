@@ -51,8 +51,7 @@ def training_agent(running_Q_table, env, num_episodes):
                 action: 0 for action in range(env.action_space.n)}
             
         # Reset Variable 
-        epochs = 0
-        num_penalties, reward, total_reward = 0, 0, 0
+        epochs, num_penalties, reward, total_reward = 0, 0, 0, 0
         while reward != 20:
             # update q(state, reward)
             state, reward = update_q(running_Q_table, env, state)
