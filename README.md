@@ -36,7 +36,7 @@ $ python train.py --help
 Usage: train.py [OPTIONS]
 
 Options:
-  --num-episodes INTEGER  Number of episodes to train on  [default: 100000]
+  --num-episodes INTEGER  Number of episodes to train on  [default: 50000]
   --save-path TEXT        Path to save the Q-table dump  [default:
                           q_table.pickle]
   --help                  Show this message and exit.
