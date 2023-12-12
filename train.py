@@ -21,6 +21,7 @@ def update_q(running_Q_table, env, state):
     else:
         action = select_optimal_action(running_Q_table, state)
 
+    # Step the environment by one timestep. Returns = observation, reward, done, info
     next_state, reward, _, _ = env.step(action)
     old_q_value = running_Q_table[state][action]
 
@@ -42,14 +43,17 @@ def update_q(running_Q_table, env, state):
 
 def training_agent(running_Q_table, env, num_episodes):
     for i in range(num_episodes):
+        # Resets the environment and returns a random initial state.
         state = env.reset()
         if not running_Q_table[state]:
+            # 0 = south, 1 = north, 2 = east, 3 = west, 4 = pickup, 5 = dropoff
             running_Q_table[state] = {
                 action: 0 for action in range(env.action_space.n)}
 
         epochs = 0
         num_penalties, reward, total_reward = 0, 0, 0
         while reward != 20:
+            # update q(state, reward)
             state, reward = update_q(running_Q_table, env, state)
             total_reward += reward
 
@@ -69,8 +73,11 @@ def training_agent(running_Q_table, env, num_episodes):
 @click.option('--num-episodes', default=NUM_EPISODES, help='Number of Episodes to train on', show_default=True)
 @click.option('--save-path', default="q_table.pickle", help='Path to save the Q-table dump', show_default=True)
 def main(num_episodes, save_path):
+    # load the game environment and render
     env = gym.make("Taxi-v3")
+    # Define Dict
     running_Q_table = defaultdict(int, {})
+    # Training Agent
     running_Q_table = training_agent(running_Q_table, env, num_episodes)
     # save the table for future use
     with open(save_path, "wb") as f:
