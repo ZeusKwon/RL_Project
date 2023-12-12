@@ -14,7 +14,7 @@ epsilon = 0.11
 
 NUM_EPISODES = 50000
 
-
+# Update Q_table
 def update_q(running_Q_table, env, state):
     if random.uniform(0, 1) < epsilon:
         action = env.action_space.sample()
