@@ -14,7 +14,7 @@ epsilon = 0.11
 
 NUM_EPISODES = 50000
 
-
+# Update Q_table
 def update_q(running_Q_table, env, state):
     if random.uniform(0, 1) < epsilon:
         action = env.action_space.sample()
@@ -49,7 +49,8 @@ def training_agent(running_Q_table, env, num_episodes):
             # 0 = south, 1 = north, 2 = east, 3 = west, 4 = pickup, 5 = dropoff
             running_Q_table[state] = {
                 action: 0 for action in range(env.action_space.n)}
-
+            
+        # Variable reset
         epochs = 0
         num_penalties, reward, total_reward = 0, 0, 0
         while reward != 20:
