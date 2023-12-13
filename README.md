@@ -39,6 +39,8 @@ Options:
   --help                  Show this message and exit.
 ```
 
+> Train Model File Path -> /RL_Project/q_table.pickle
+
 ### Evaluation
 ```shell script
 $ python evaluate.py --help
