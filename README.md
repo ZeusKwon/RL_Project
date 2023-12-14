@@ -1,7 +1,4 @@
 # RL_Project
-https://github.com/satwikkansal/q-learning-taxi-v3#q-learning-taxi-v3
-https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/
-
 ## Q-learning taxi-v3
 - State
 
@@ -41,6 +38,8 @@ Options:
                           q_table.pickle]
   --help                  Show this message and exit.
 ```
+
+> Train Model File Path -> /RL_Project/q_table.pickle
 
 ### Evaluation
 ```shell script

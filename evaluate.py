@@ -11,20 +11,22 @@ NUMBER_EPISODES = 100
 
 
 def evaluate_agent(running_Q_table, env, number_trials):
+    """Evaluate agent's performance after Q-learning"""
     total_epochs, total_penalties = 0, 0
 
     print("Running episodes...")
     for _ in range(number_trials):
+        # Resets the environment and returns a random initial state.
         state = env.reset()
+        # Reset Variable
         epochs, number_penalties, reward = 0, 0, 0
 
         while reward != 20:
             next_action = select_optimal_action(running_Q_table,state)
+            # Step the environment by one timestep. Returns = observation, reward, done, info
             state, reward, _, _ = env.step(next_action)
-
             if reward == -10:
                 number_penalties += 1
-
             epochs += 1
 
         total_penalties += number_penalties
@@ -41,7 +43,9 @@ def evaluate_agent(running_Q_table, env, number_trials):
 @click.option('--num-episodes', default=NUMBER_EPISODES, help='Number of episodes to train on', show_default=True)
 @click.option('--q-path', default="q_table.pickle", help='Path to read the -table values from', show_default=True)
 def main(num_episodes, q_path):
+    # load the game environment and render
     env = gym.make("Taxi-v3")
+    # load the table for future use
     with open(q_path, 'rb') as f:
         running_Q_table = pickle.load(f)
     evaluate_agent(running_Q_table, env, num_episodes)
